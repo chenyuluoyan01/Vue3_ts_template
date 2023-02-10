@@ -1,5 +1,5 @@
 <template>
-	<div class="system-dept-container layout-padding">
+	<div class="system-dept-container layout-padding" ref="printRef">
 		<el-card shadow="hover" class="layout-padding-auto">
 			<div class="system-dept-search mb15">
 				<el-input size="default" placeholder="请输入部门名称" style="max-width: 180px"> </el-input>
@@ -14,6 +14,12 @@
 						<ele-FolderAdd />
 					</el-icon>
 					新增部门
+				</el-button>
+				<el-button size="default" type="warning" class="ml10" @click="onPrintJs">
+					<el-icon>
+						<ele-Search />
+					</el-icon>
+					打印
 				</el-button>
 			</div>
 			<el-table
@@ -54,12 +60,14 @@
 <script setup lang="ts" name="systemDept">
 import { defineAsyncComponent, ref, reactive, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
+import printJs from 'print-js';
 
 // 引入组件
 const DeptDialog = defineAsyncComponent(() => import('/@/views/system/dept/dialog.vue'));
 
 // 定义变量内容
 const deptDialogRef = ref();
+const printRef = ref();
 const state = reactive<SysDeptState>({
 	tableData: {
 		data: [],
@@ -106,6 +114,16 @@ const getTableData = () => {
 	setTimeout(() => {
 		state.tableData.loading = false;
 	}, 500);
+};
+// 打印点击
+const onPrintJs = () => {
+	printJs({
+		printable: printRef.value,
+		type: 'html',
+		css: ['//at.alicdn.com/t/c/font_2298093_rnp72ifj3ba.css', '//unpkg.com/element-plus/dist/index.css'],
+		scanStyles: false,
+		style: `@media print{.mb15{margin-bottom:15px;}.el-button--small i.iconfont{font-size: 12px !important;margin-right: 5px;}}`,
+	});
 };
 // 打开新增菜单弹窗
 const onOpenAddDept = (type: string) => {

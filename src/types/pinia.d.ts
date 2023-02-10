@@ -85,6 +85,5 @@ declare interface ThemeConfigState {
 		globalTitle: string;
 		globalViceTitle: string;
 		globalViceTitleMsg: string;
-		globalComponentSize: string;
 	};
 }

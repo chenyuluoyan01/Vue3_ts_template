@@ -12,6 +12,10 @@
 </template>
 
 <script setup lang="ts" name="noticeBar">
+// 使用方法：
+// import { defineAsyncComponent } from 'vue';
+// const NoticeBar = defineAsyncComponent(() => import('/@/components/noticeBar/index.vue'));
+
 import { reactive, ref, onMounted, nextTick } from 'vue';
 
 // 定义父组件传过来的值

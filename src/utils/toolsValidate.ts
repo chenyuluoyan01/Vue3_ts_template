@@ -22,6 +22,10 @@ export function verifyNumberPercentage(val: string): string {
 	return v;
 }
 
+// // 验证百分比（不可以小数）
+// const onVerifyNumberPercentage = (val: string) => {
+// 	state.ruleForm.a22 = verifyNumberPercentage(val);
+// };
 /**
  * 验证百分比（可以小数）
  * @param val 当前值字符串

@@ -3,13 +3,13 @@
 		<el-card shadow="hover">
 			<div class="system-menu-search mb15">
 				<el-input size="default" placeholder="请输入菜单名称" style="max-width: 180px"> </el-input>
-				<el-button size="default" type="primary" class="ml10">
+				<el-button size="default" type="primary" class="ml10" v-waves>
 					<el-icon>
 						<ele-Search />
 					</el-icon>
 					查询
 				</el-button>
-				<el-button size="default" type="success" class="ml10" @click="onOpenAddMenu">
+				<el-button size="default" type="success" class="ml10" @click="onOpenAddMenu" v-waves>
 					<el-icon>
 						<ele-FolderAdd />
 					</el-icon>

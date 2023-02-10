@@ -1,13 +1,6 @@
 <template>
 	<div class="layout-breadcrumb-seting">
-		<el-drawer
-			title="布局配置"
-			v-model="getThemeConfig.isDrawer"
-			direction="rtl"
-			destroy-on-close
-			size="260px"
-			@close="onDrawerClose"
-		>
+		<el-drawer title="布局配置" v-model="getThemeConfig.isDrawer" direction="rtl" destroy-on-close size="260px" @close="onDrawerClose">
 			<el-scrollbar class="layout-breadcrumb-seting-bar">
 				<!-- 全局主题 -->
 				<el-divider content-position="left">全局主题</el-divider>
@@ -407,21 +400,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="copy-config">
-					<el-alert title="点击下方按钮，复制布局配置去 `src/stores/themeConfig.ts` 中修改。" type="warning" :closable="false"> </el-alert>
-					<el-button size="default" class="copy-config-btn" type="primary" ref="copyConfigBtnRef" @click="onCopyConfigClick">
-						<el-icon class="mr5">
-							<ele-CopyDocument />
-						</el-icon>
-						一键复制配置
-					</el-button>
-					<el-button size="default" class="copy-config-btn-reset" type="info" @click="onResetConfigClick">
-						<el-icon class="mr5">
-							<ele-RefreshRight />
-						</el-icon>
-						一键复制配置
-					</el-button>
-				</div>
 			</el-scrollbar>
 		</el-drawer>
 	</div>
@@ -436,14 +414,12 @@ import { useChangeColor } from '/@/utils/theme';
 import { verifyAndSpace } from '/@/utils/toolsValidate';
 import { Local } from '/@/utils/storage';
 import Watermark from '/@/utils/wartermark';
-import commonFunction from '/@/utils/commonFunction';
 import other from '/@/utils/other';
 import mittBus from '/@/utils/mitt';
 
 // 定义变量内容
 const storesThemeConfig = useThemeConfig();
 const { themeConfig } = storeToRefs(storesThemeConfig);
-const { copyText } = commonFunction();
 const { getLightColor, getDarkColor } = useChangeColor();
 const state = reactive({
 	isMobile: false,
@@ -614,21 +590,6 @@ const setLocalThemeConfig = () => {
 // 存储布局配置全局主题样式（html根标签）
 const setLocalThemeConfigStyle = () => {
 	Local.set('themeConfigStyle', document.documentElement.style.cssText);
-};
-// 一键复制配置
-const onCopyConfigClick = () => {
-	let copyThemeConfig = Local.get('themeConfig');
-	copyThemeConfig.isDrawer = false;
-	copyText(JSON.stringify(copyThemeConfig)).then(() => {
-		getThemeConfig.value.isDrawer = false;
-	});
-};
-// 一键恢复默认
-const onResetConfigClick = () => {
-	Local.clear();
-	window.location.reload();
-	// @ts-ignore
-	Local.set('version', __VERSION__);
 };
 // 初始化菜单样式等
 const initSetStyle = () => {

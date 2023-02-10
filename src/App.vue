@@ -1,5 +1,5 @@
 <template>
-	<el-config-provider :size="getGlobalComponentSize">
+	<el-config-provider>
 		<router-view v-show="themeConfig.lockScreenTime > 1" />
 		<LockScreen v-if="themeConfig.isLockScreen" />
 		<Setings ref="setingsRef" v-show="themeConfig.lockScreenTime > 1" />
@@ -41,10 +41,6 @@ const getVersion = computed(() => {
 		if ((Local.get('version') && Local.get('version') !== __VERSION__) || !Local.get('version')) isVersion = true;
 	}
 	return isVersion;
-});
-// 获取全局组件大小
-const getGlobalComponentSize = computed(() => {
-	return other.globalComponentSize();
 });
 
 // 设置初始化，防止刷新时恢复默认
