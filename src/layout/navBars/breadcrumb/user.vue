@@ -1,8 +1,5 @@
 <template>
 	<div class="layout-navbars-breadcrumb-user pr15" :style="{ flex: layoutUserFlexNum }">
-		<div class="layout-navbars-breadcrumb-user-icon" @click="onLayoutSetingClick">
-			<i class="icon-skin iconfont" title="布局配置"></i>
-		</div>
 		<div class="layout-navbars-breadcrumb-user-icon">
 			<el-popover placement="bottom" trigger="click" transition="el-zoom-in-top" :width="300" :persistent="false">
 				<template #reference>
@@ -35,10 +32,7 @@
 			<template #dropdown>
 				<el-dropdown-menu>
 					<el-dropdown-item command="/home">首页</el-dropdown-item>
-					<el-dropdown-item command="wareHouse">代码仓库</el-dropdown-item>
 					<el-dropdown-item command="/personal">个人中心</el-dropdown-item>
-					<el-dropdown-item command="/404">404</el-dropdown-item>
-					<el-dropdown-item command="/401">401</el-dropdown-item>
 					<el-dropdown-item divided command="logOut">退出登录</el-dropdown-item>
 				</el-dropdown-menu>
 			</template>
@@ -55,7 +49,6 @@ import screenfull from 'screenfull';
 import { storeToRefs } from 'pinia';
 import { useUserInfo } from '/@/stores/userInfo';
 import { useThemeConfig } from '/@/stores/themeConfig';
-import mittBus from '/@/utils/mitt';
 import { Session } from '/@/utils/storage';
 
 // 引入组件
@@ -94,10 +87,6 @@ const onScreenfullClick = () => {
 		else state.isScreenfull = false;
 	});
 };
-// 布局配置 icon 点击时
-const onLayoutSetingClick = () => {
-	mittBus.emit('openSetingsDrawer');
-};
 // 下拉菜单点击时
 const onHandleCommandClick = (path: string) => {
 	if (path === 'logOut') {
@@ -132,8 +121,6 @@ const onHandleCommandClick = (path: string) => {
 				window.location.reload();
 			})
 			.catch(() => {});
-	} else if (path === 'wareHouse') {
-		window.open('https://gitee.com/lyt-top/vue-next-admin');
 	} else {
 		router.push(path);
 	}

@@ -1,6 +1,9 @@
 <template>
 	<div class="system-dept-dialog-container">
-		<el-dialog :title="state.dialog.title" v-model="state.dialog.isShowDialog" width="769px">
+		<el-dialog v-model="state.dialog.isShowDialog" width="769px">
+			<template #header>
+				<div v-drag="['.system-dept-dialog-container .el-dialog', '.system-dept-dialog-container .el-dialog__header']">{{ state.dialog.title }}</div>
+			</template>
 			<el-form ref="deptDialogFormRef" :model="state.ruleForm" size="default" label-width="90px">
 				<el-row :gutter="35">
 					<el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="mb20">

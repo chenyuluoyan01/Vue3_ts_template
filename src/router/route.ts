@@ -253,39 +253,6 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 				],
 			},
 			{
-				path: '/pages',
-				name: 'pagesIndex',
-				component: () => import('/@/layout/routerView/parent.vue'),
-				redirect: '/pages/pagesIocnfont',
-				meta: {
-					title: '页面',
-					isLink: '',
-					isHide: false,
-					isKeepAlive: true,
-					isAffix: false,
-					isIframe: false,
-					roles: ['admin', 'common'],
-					icon: 'iconfont icon-fuzhiyemian',
-				},
-				children: [
-					{
-						path: '/pages/drag',
-						name: 'pagesDrag',
-						component: () => import('/@/views/pages/drag/index.vue'),
-						meta: {
-							title: '拖动指令',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin', 'common'],
-							icon: 'ele-Pointer',
-						},
-					},
-				],
-			},
-			{
 				path: '/make',
 				name: 'makeIndex',
 				component: () => import('/@/layout/routerView/parent.vue'),
@@ -325,7 +292,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 				meta: {
 					title: '个人中心',
 					isLink: '',
-					isHide: false,
+					isHide: true,
 					isKeepAlive: true,
 					isAffix: false,
 					isIframe: false,

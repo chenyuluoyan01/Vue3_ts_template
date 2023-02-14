@@ -60,11 +60,11 @@ export const useThemeConfig = defineStore('themeConfig', {
 			 * 界面设置
 			 */
 			// 是否开启菜单水平折叠效果
-			isCollapse: true,
+			isCollapse: false,
 			// 是否开启菜单手风琴效果
 			isUniqueOpened: true,
 			// 是否开启固定 Header
-			isFixedHeader: false,
+			isFixedHeader: true,
 			// 初始化变量，用于更新菜单 el-scrollbar 的高度，请勿删除
 			isFixedHeaderChange: false,
 			// 是否开启经典布局分割菜单（仅经典布局生效）
@@ -104,11 +104,6 @@ export const useThemeConfig = defineStore('themeConfig', {
 			// 主页面切换动画：可选值"<slide-right|slide-left|opacitys>"，默认 slide-right
 			animation: 'slide-right',
 
-			/**
-			 * 布局切换
-			 * 注意：为了演示，切换布局时，颜色会被还原成默认，代码位置：/@/layout/navBars/breadcrumb/setings.vue
-			 * 中的 `initSetLayoutChange(设置布局切换，重置主题样式)` 方法
-			 */
 			// 布局切换： defaults
 			layout: 'defaults',
 
