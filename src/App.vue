@@ -1,8 +1,7 @@
 <template>
 	<el-config-provider>
-		<router-view v-show="themeConfig.lockScreenTime > 1" />
-		<LockScreen v-if="themeConfig.isLockScreen" />
-		<CloseFull v-if="!themeConfig.isLockScreen" />
+		<router-view />
+		<CloseFull />
 	</el-config-provider>
 </template>
 
@@ -13,17 +12,14 @@ import { storeToRefs } from 'pinia';
 import { useTagsViewRoutes } from '/@/stores/tagsViewRoutes';
 import { useThemeConfig } from '/@/stores/themeConfig';
 import { Local, Session } from '/@/utils/storage';
-import mittBus from '/@/utils/mitt';
 import setIntroduction from '/@/utils/setIconfont';
 import { useChangeColor } from '/@/utils/theme';
 
 // 引入组件
-const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue'));
 const CloseFull = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/closeFull.vue'));
 const { getLightColor } = useChangeColor();
 
 // 定义变量内容
-const setingsRef = ref();
 const stores = useTagsViewRoutes();
 const storesThemeConfig = useThemeConfig();
 const { themeConfig } = storeToRefs(storesThemeConfig);
