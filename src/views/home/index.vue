@@ -38,24 +38,6 @@
 			</el-col>
 		</el-row>
 		<el-row :gutter="15" class="home-card-three">
-			<el-col :xs="24" :sm="10" :md="10" :lg="8" :xl="8">
-				<div class="home-card-item">
-					<div class="home-card-item-title">快捷导航工具</div>
-					<div class="home-monitor">
-						<div class="flex-warp">
-							<div class="flex-warp-item" v-for="(v, k) in state.homeThree" :key="k">
-								<div class="flex-warp-item-box" :class="`home-animation${k}`">
-									<div class="flex-margin">
-										<i :class="v.icon" :style="{ color: v.iconColor }"></i>
-										<span class="pl5">{{ v.label }}</span>
-										<div class="mt10">{{ v.value }}</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</el-col>
 			<el-col :xs="24" :sm="14" :md="14" :lg="16" :xl="16" class="home-media">
 				<div class="home-card-item">
 					<div style="height: 100%" ref="homeBarRef"></div>
@@ -125,62 +107,6 @@ const state = reactive({
 			color1: '#FF6462',
 			color2: '--next-color-danger-lighter',
 			color3: '--el-color-danger',
-		},
-	],
-	homeThree: [
-		{
-			icon: 'iconfont icon-yangan',
-			label: '浅粉红',
-			value: '2.1%OBS/M',
-			iconColor: '#F72B3F',
-		},
-		{
-			icon: 'iconfont icon-wendu',
-			label: '深红(猩红)',
-			value: '30℃',
-			iconColor: '#91BFF8',
-		},
-		{
-			icon: 'iconfont icon-shidu',
-			label: '淡紫红',
-			value: '57%RH',
-			iconColor: '#88D565',
-		},
-		{
-			icon: 'iconfont icon-shidu',
-			label: '弱紫罗兰红',
-			value: '107w',
-			iconColor: '#88D565',
-		},
-		{
-			icon: 'iconfont icon-zaosheng',
-			label: '中紫罗兰红',
-			value: '57DB',
-			iconColor: '#FBD4A0',
-		},
-		{
-			icon: 'iconfont icon-zaosheng',
-			label: '紫罗兰',
-			value: '57PV',
-			iconColor: '#FBD4A0',
-		},
-		{
-			icon: 'iconfont icon-zaosheng',
-			label: '暗紫罗兰',
-			value: '517Cpd',
-			iconColor: '#FBD4A0',
-		},
-		{
-			icon: 'iconfont icon-zaosheng',
-			label: '幽灵白',
-			value: '12kg',
-			iconColor: '#FBD4A0',
-		},
-		{
-			icon: 'iconfont icon-zaosheng',
-			label: '海军蓝',
-			value: '64fm',
-			iconColor: '#FBD4A0',
 		},
 	],
 	myCharts: [] as EmptyArrayType,
