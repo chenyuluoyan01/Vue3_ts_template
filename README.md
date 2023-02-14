@@ -28,3 +28,8 @@ cnpm run dev
 # 打包发布
 cnpm run build
 ```
+
+浅黄色: #ffcb47
+浅绿色: #70cf41
+深黄色: #dfae64
+浅红色: #e56565

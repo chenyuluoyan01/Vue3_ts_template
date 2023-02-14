@@ -13,8 +13,8 @@
 			>
 				<div class="home-card-item flex">
 					<div class="flex-margin flex w100" :class="` home-one-animation${k}`">
-						<div class="flex-auto">
-							<span class="font30">{{ v.num1 }}</span>
+						<div class="flex-auto" ref="topCardRefs">
+							<span class="font30 card-num">{{ v.num1 }}</span>
 							<span class="ml5 font16" :style="{ color: v.color1 }">{{ v.num2 }}%</span>
 							<div class="mt10">{{ v.num3 }}</div>
 						</div>
@@ -71,11 +71,13 @@ import * as echarts from 'echarts';
 import { storeToRefs } from 'pinia';
 import { useThemeConfig } from '/@/stores/themeConfig';
 import { useTagsViewRoutes } from '/@/stores/tagsViewRoutes';
+import { CountUp } from 'countup.js';
 
 // 定义变量内容
 const homeLineRef = ref();
 const homePieRef = ref();
 const homeBarRef = ref();
+const topCardRefs = ref<RefType[]>([]);
 const storesTagsViewRoutes = useTagsViewRoutes();
 const storesThemeConfig = useThemeConfig();
 const { themeConfig } = storeToRefs(storesThemeConfig);
@@ -116,7 +118,7 @@ const state = reactive({
 			color3: '--el-color-warning',
 		},
 		{
-			num1: '520,43',
+			num1: '524.30',
 			num2: '-10.01',
 			num3: '访问统计信息',
 			num4: 'fa fa-github-alt',
@@ -501,9 +503,18 @@ const initEchartsResizeFun = () => {
 const initEchartsResize = () => {
 	window.addEventListener('resize', initEchartsResizeFun);
 };
+
+const initNumCountUp = () => {
+	nextTick(() => {
+		topCardRefs.value.forEach((v: HTMLDivElement) => {
+			new CountUp(v.querySelector('.card-num') as HTMLDivElement, Math.random() * 10000).start();
+		});
+	});
+};
 // 页面加载时
 onMounted(() => {
 	initEchartsResize();
+	// initNumCountUp();
 });
 // 由于页面缓存原因，keep-alive
 onActivated(() => {

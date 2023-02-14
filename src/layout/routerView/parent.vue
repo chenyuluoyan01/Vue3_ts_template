@@ -27,7 +27,6 @@ const { keepAliveNames, cachedViews } = storeToRefs(storesKeepAliveNames);
 const { themeConfig } = storeToRefs(storesThemeConfig);
 const state = reactive<ParentViewState>({
 	refreshRouterViewKey: '', // 非 iframe tagsview 右键菜单刷新时
-	iframeRefreshKey: '', // iframe tagsview 右键菜单刷新时
 	keepAliveNameList: [],
 	iframeList: [],
 });
@@ -48,10 +47,8 @@ onBeforeMount(() => {
 	mittBus.on('onTagsViewRefreshRouterView', (fullPath: string) => {
 		state.keepAliveNameList = keepAliveNames.value.filter((name: string) => route.name !== name);
 		state.refreshRouterViewKey = '';
-		state.iframeRefreshKey = '';
 		nextTick(() => {
 			state.refreshRouterViewKey = fullPath;
-			state.iframeRefreshKey = fullPath;
 			state.keepAliveNameList = keepAliveNames.value;
 		});
 	});
@@ -72,7 +69,6 @@ onUnmounted(() => {
 	mittBus.off('onTagsViewRefreshRouterView', () => {});
 });
 // 监听路由变化，防止 tagsView 多标签时，切换动画消失
-// https://toscode.gitee.com/lyt-top/vue-next-admin/pulls/38/files
 watch(
 	() => route.fullPath,
 	() => {

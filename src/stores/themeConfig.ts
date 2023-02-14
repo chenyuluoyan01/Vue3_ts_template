@@ -62,17 +62,13 @@ export const useThemeConfig = defineStore('themeConfig', {
 			// 是否开启菜单水平折叠效果
 			isCollapse: false,
 			// 是否开启菜单手风琴效果
-			isUniqueOpened: true,
+			isUniqueOpened: false,
 			// 是否开启固定 Header
 			isFixedHeader: true,
 			// 初始化变量，用于更新菜单 el-scrollbar 的高度，请勿删除
 			isFixedHeaderChange: false,
 			// 是否开启经典布局分割菜单（仅经典布局生效）
 			isClassicSplitMenu: false,
-			// 是否开启自动锁屏
-			isLockScreen: false,
-			// 开启自动锁屏倒计时(s/秒)
-			lockScreenTime: 30,
 
 			/**
 			 * 界面显示

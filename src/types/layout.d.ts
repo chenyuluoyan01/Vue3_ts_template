@@ -36,7 +36,6 @@ declare type TagsViewState<T = any> = {
 // navBars parent
 declare type ParentViewState<T = any> = {
 	refreshRouterViewKey: string;
-	iframeRefreshKey: string;
 	keepAliveNameList: string[];
 	iframeList: T[];
 };

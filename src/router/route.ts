@@ -193,7 +193,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 				path: '/fun',
 				name: 'funIndex',
 				component: () => import('/@/layout/routerView/parent.vue'),
-				redirect: '/fun/countup',
+				redirect: '/fun/wangEditor',
 				meta: {
 					title: '功能',
 					isLink: '',
@@ -205,21 +205,6 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 					icon: 'iconfont icon-crew_feature',
 				},
 				children: [
-					{
-						path: '/fun/countup',
-						name: 'funCountup',
-						component: () => import('/@/views/fun/countup/index.vue'),
-						meta: {
-							title: '数字滚动',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin', 'common'],
-							icon: 'ele-Odometer',
-						},
-					},
 					{
 						path: '/fun/wangEditor',
 						name: 'funWangEditor',
