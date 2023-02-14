@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-navbars-tagsview" :class="{ 'layout-navbars-tagsview-shadow': getThemeConfig.layout === 'classic' }">
 		<el-scrollbar ref="scrollbarRef" @wheel.prevent="onHandleScroll">
-			<ul class="layout-navbars-tagsview-ul" :class="setTagsStyle" ref="tagsUlRef">
+			<ul class="layout-navbars-tagsview-ul tags-style-five" ref="tagsUlRef">
 				<li
 					v-for="(v, k) in state.tagsViewList"
 					:key="k"
@@ -18,7 +18,6 @@
 					"
 				>
 					<i class="iconfont icon-webicon318 layout-navbars-tagsview-ul-li-iconfont" v-if="isActive(v)"></i>
-					<SvgIcon :name="v.meta.icon" v-if="!isActive(v) && getThemeConfig.isTagsviewIcon" class="pr5" />
 					<span>{{ setTagsViewNameI18n(v) }}</span>
 					<template v-if="isActive(v)">
 						<SvgIcon
@@ -87,10 +86,6 @@ const state = reactive<TagsViewState>({
 	tagsViewRoutesList: [],
 });
 
-// 动态设置 tagsView 风格样式
-const setTagsStyle = computed(() => {
-	return themeConfig.value.tagsStyle;
-});
 // 获取布局配置信息
 const getThemeConfig = computed(() => {
 	return themeConfig.value;
@@ -111,7 +106,6 @@ const isActive = (v: RouteItem) => {
 			return v.url ? v.url === state.routeActive : v.path === state.routeActive;
 		} else {
 			// 通过 name 传参，params 取值，刷新页面参数消失
-			// https://gitee.com/lyt-top/vue-next-admin/issues/I51RS9
 			return v.path === state.routePath;
 		}
 	}
@@ -659,28 +653,7 @@ watch(
 			transition: border-color 3s ease;
 		}
 	}
-	// 风格4
-	.tags-style-four {
-		.layout-navbars-tagsview-ul-li {
-			margin-right: 0 !important;
-			border: none !important;
-			position: relative;
-			border-radius: 3px !important;
-			.layout-icon-active {
-				display: none;
-			}
-			.layout-icon-three {
-				display: block;
-			}
-			&:hover {
-				background: none !important;
-			}
-		}
-		.is-active {
-			background: none !important;
-			color: var(--el-color-primary) !important;
-		}
-	}
+
 	// 风格5
 	.tags-style-five {
 		align-items: flex-end;

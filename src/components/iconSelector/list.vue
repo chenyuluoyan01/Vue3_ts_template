@@ -49,9 +49,6 @@ const onColClick = (v: unknown | string) => {
 	.el-row {
 		padding: 15px;
 	}
-	.el-scrollbar__bar.is-horizontal {
-		display: none;
-	}
 	.icon-selector-warp-item {
 		display: flex;
 		justify-content: center;

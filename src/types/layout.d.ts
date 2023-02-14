@@ -4,17 +4,6 @@ declare type AsideState = {
 	clientWidth: number;
 };
 
-// columnsAside
-declare type ColumnsAsideState<T = any> = {
-	columnsAsideList: T[];
-	liIndex: number;
-	liOldIndex: null | number;
-	liHoverIndex: null | number;
-	liOldPath: null | string;
-	difference: number;
-	routeSplit: string[];
-};
-
 // navBars breadcrumb
 declare type BreadcrumbState<T = any> = {
 	breadcrumbList: T[];

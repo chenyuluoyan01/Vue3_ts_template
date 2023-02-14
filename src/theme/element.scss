@@ -17,13 +17,6 @@
 	margin-right: 5px;
 }
 
-/* Input 输入框、InputNumber 计数器
-------------------------------- */
-// 菜单搜索
-.el-autocomplete-suggestion__wrap {
-	max-height: 280px !important;
-}
-
 /* Form 表单
 ------------------------------- */
 .el-form {
@@ -142,50 +135,6 @@
 				}
 			}
 		}
-	}
-	// 横向菜单
-	.el-menu--horizontal {
-		background: var(--next-bg-topBar);
-		.el-menu-item,
-		.el-sub-menu {
-			height: 50px !important;
-			line-height: 50px !important;
-			color: var(--next-bg-topBarColor);
-			.el-sub-menu__title {
-				height: 50px !important;
-				line-height: 50px !important;
-				color: var(--next-bg-topBarColor);
-			}
-			.el-popper.is-pure.is-light {
-				.el-menu--horizontal {
-					.el-sub-menu .el-sub-menu__title {
-						background-color: unset !important;
-						color: var(--next-bg-topBarColor);
-					}
-					.el-sub-menu.is-active .el-sub-menu__title {
-						color: var(--el-menu-active-color);
-					}
-				}
-			}
-		}
-		.el-menu-item.is-active,
-		.el-sub-menu.is-active .el-sub-menu__title {
-			color: var(--el-menu-active-color);
-		}
-	}
-}
-// 横向菜单（经典、横向）布局
-.el-menu.el-menu--horizontal {
-	border-bottom: none !important;
-	width: 100% !important;
-	.el-menu-item,
-	.el-sub-menu__title {
-		height: 50px !important;
-		color: var(--next-bg-topBarColor);
-	}
-	.el-menu-item:not(.is-active):hover,
-	.el-sub-menu:not(.is-active):hover .el-sub-menu__title {
-		color: var(--next-bg-topBarColor);
 	}
 }
 

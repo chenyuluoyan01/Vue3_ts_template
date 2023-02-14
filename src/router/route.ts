@@ -5,7 +5,7 @@ import { RouteRecordRaw } from 'vue-router';
  *
  * 路由meta对象参数说明
  * meta: {
- *      title:          菜单栏及 tagsView 栏、菜单搜索名称
+ *      title:          菜单栏及 tagsView 栏名称
  *      isHide：        是否隐藏此路由
  *      isKeepAlive：   是否缓存组件状态
  *      isAffix：       是否固定在 tagsView 栏上
@@ -281,21 +281,6 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 							isIframe: false,
 							roles: ['admin', 'common'],
 							icon: 'ele-Pointer',
-						},
-					},
-					{
-						path: '/pages/lazyImg',
-						name: 'pagesLazyImg',
-						component: () => import('/@/views/pages/lazyImg/index.vue'),
-						meta: {
-							title: '图片懒加载',
-							isLink: '',
-							isHide: false,
-							isKeepAlive: true,
-							isAffix: false,
-							isIframe: false,
-							roles: ['admin'],
-							icon: 'ele-PictureFilled',
 						},
 					},
 				],

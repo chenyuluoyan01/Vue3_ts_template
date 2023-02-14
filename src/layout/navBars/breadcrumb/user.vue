@@ -1,10 +1,5 @@
 <template>
 	<div class="layout-navbars-breadcrumb-user pr15" :style="{ flex: layoutUserFlexNum }">
-		<div class="layout-navbars-breadcrumb-user-icon" @click="onSearchClick">
-			<el-icon title="菜单搜索">
-				<ele-Search />
-			</el-icon>
-		</div>
 		<div class="layout-navbars-breadcrumb-user-icon" @click="onLayoutSetingClick">
 			<i class="icon-skin iconfont" title="布局配置"></i>
 		</div>
@@ -60,13 +55,11 @@ import screenfull from 'screenfull';
 import { storeToRefs } from 'pinia';
 import { useUserInfo } from '/@/stores/userInfo';
 import { useThemeConfig } from '/@/stores/themeConfig';
-import other from '/@/utils/other';
 import mittBus from '/@/utils/mitt';
-import { Session, Local } from '/@/utils/storage';
+import { Session } from '/@/utils/storage';
 
 // 引入组件
 const UserNews = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/userNews.vue'));
-const Search = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/search.vue'));
 
 // 定义变量内容
 const router = useRouter();
@@ -144,10 +137,6 @@ const onHandleCommandClick = (path: string) => {
 	} else {
 		router.push(path);
 	}
-};
-// 菜单搜索点击
-const onSearchClick = () => {
-	searchRef.value.openSearch();
 };
 </script>
 

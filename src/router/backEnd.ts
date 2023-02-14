@@ -59,7 +59,7 @@ export async function initBackEndControlRoutes() {
 /**
  * 设置路由到 pinia routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组
  * @description 用于左侧菜单、横向菜单的显示
- * @description 用于 tagsView、菜单搜索中：未过滤隐藏的(isHide)
+ * @description 用于 tagsView：未过滤隐藏的(isHide)
  */
 export async function setFilterMenuAndCacheTagsViewRoutes() {
 	const storesRoutesList = useRoutesList(pinia);
@@ -69,7 +69,7 @@ export async function setFilterMenuAndCacheTagsViewRoutes() {
 
 /**
  * 缓存多级嵌套数组处理后的一维数组
- * @description 用于 tagsView、菜单搜索中：未过滤隐藏的(isHide)
+ * @description 用于 tagsView中：未过滤隐藏的(isHide)
  */
 export function setCacheTagsViewRoutes() {
 	const storesTagsView = useTagsViewRoutes(pinia);

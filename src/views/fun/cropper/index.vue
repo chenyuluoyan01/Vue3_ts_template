@@ -1,12 +1,6 @@
 <template>
 	<div class="croppers-container layout-pd">
 		<el-card shadow="hover" header="cropper 图片裁剪">
-			<el-alert
-				title="感谢优秀的 `cropperjs`，项目地址：https://github.com/fengyuanchen/cropperjs"
-				type="success"
-				:closable="false"
-				class="mb15"
-			></el-alert>
 			<div class="cropper-img-warp">
 				<div class="mb15 mt15">
 					<img class="cropper-img" :src="state.cropperImg" />

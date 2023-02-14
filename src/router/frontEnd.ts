@@ -98,10 +98,10 @@ export function setFilterRoute(chil: any) {
 
 /**
  * 缓存多级嵌套数组处理后的一维数组
- * @description 用于 tagsView、菜单搜索中：未过滤隐藏的(isHide)
+ * @description 用于 tagsView中：未过滤隐藏的(isHide)
  */
 export function setCacheTagsViewRoutes() {
-	// 获取有权限的路由，否则 tagsView、菜单搜索中无权限的路由也将显示
+	// 获取有权限的路由，否则 tagsView无权限的路由也将显示
 	const stores = useUserInfo(pinia);
 	const storesTagsView = useTagsViewRoutes(pinia);
 	const { userInfos } = storeToRefs(stores);
@@ -113,7 +113,7 @@ export function setCacheTagsViewRoutes() {
 /**
  * 设置递归过滤有权限的路由到 pinia routesList 中（已处理成多级嵌套路由）及缓存多级嵌套数组处理后的一维数组
  * @description 用于左侧菜单、横向菜单的显示
- * @description 用于 tagsView、菜单搜索中：未过滤隐藏的(isHide)
+ * @description 用于 tagsView中：未过滤隐藏的(isHide)
  */
 export function setFilterMenuAndCacheTagsViewRoutes() {
 	const stores = useUserInfo(pinia);

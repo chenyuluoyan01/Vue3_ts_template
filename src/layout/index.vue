@@ -1,5 +1,5 @@
 <template>
-	<component :is="layouts[themeConfig.layout]" />
+	<layouts />
 </template>
 
 <script setup lang="ts" name="layout">
@@ -10,12 +10,7 @@ import { Local } from '/@/utils/storage';
 import mittBus from '/@/utils/mitt';
 
 // 引入组件
-const layouts: any = {
-	defaults: defineAsyncComponent(() => import('/@/layout/main/defaults.vue')),
-	classic: defineAsyncComponent(() => import('/@/layout/main/classic.vue')),
-	transverse: defineAsyncComponent(() => import('/@/layout/main/transverse.vue')),
-	columns: defineAsyncComponent(() => import('/@/layout/main/columns.vue')),
-};
+const layouts = defineAsyncComponent(() => import('/@/layout/main/defaults.vue'));
 
 // 定义变量内容
 const storesThemeConfig = useThemeConfig();

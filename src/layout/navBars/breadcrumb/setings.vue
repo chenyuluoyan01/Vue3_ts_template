@@ -299,38 +299,6 @@
 						</el-select>
 					</div>
 				</div>
-				<div class="layout-breadcrumb-seting-bar-flex mt15" :style="{ opacity: getThemeConfig.layout !== 'columns' ? 0.5 : 1 }">
-					<div class="layout-breadcrumb-seting-bar-flex-label">分栏高亮风格</div>
-					<div class="layout-breadcrumb-seting-bar-flex-value">
-						<el-select
-							v-model="getThemeConfig.columnsAsideStyle"
-							placeholder="请选择"
-							size="default"
-							style="width: 90px"
-							:disabled="getThemeConfig.layout !== 'columns' ? true : false"
-							@change="setLocalThemeConfig"
-						>
-							<el-option label="圆角" value="columns-round"></el-option>
-							<el-option label="卡片" value="columns-card"></el-option>
-						</el-select>
-					</div>
-				</div>
-				<div class="layout-breadcrumb-seting-bar-flex mt15 mb27" :style="{ opacity: getThemeConfig.layout !== 'columns' ? 0.5 : 1 }">
-					<div class="layout-breadcrumb-seting-bar-flex-label">分栏布局风格</div>
-					<div class="layout-breadcrumb-seting-bar-flex-value">
-						<el-select
-							v-model="getThemeConfig.columnsAsideLayout"
-							placeholder="请选择"
-							size="default"
-							style="width: 90px"
-							:disabled="getThemeConfig.layout !== 'columns' ? true : false"
-							@change="setLocalThemeConfig"
-						>
-							<el-option label="水平" value="columns-horizontal"></el-option>
-							<el-option label="垂直" value="columns-vertical"></el-option>
-						</el-select>
-					</div>
-				</div>
 
 				<!-- 布局切换 -->
 				<el-divider content-position="left">布局切换</el-divider>

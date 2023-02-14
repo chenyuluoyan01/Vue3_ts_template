@@ -84,6 +84,10 @@ export const lazyImg = (el: string, arr: EmptyArrayType) => {
 		document.querySelectorAll(el).forEach((img) => io.observe(img));
 	});
 };
+// 使用方法
+// onMounted(() => {
+// 	other.lazyImg('[data-lazy-img-list]', state.tableData.data);
+// });
 
 /**
  * 对象深克隆

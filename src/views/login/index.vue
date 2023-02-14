@@ -42,8 +42,8 @@ import { defineAsyncComponent, onMounted, reactive, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useThemeConfig } from '/@/stores/themeConfig';
 import { NextLoading } from '/@/utils/loading';
-import logoMini from '/@/assets/logo-mini.svg';
-import loginMain from '/@/assets/login-main.svg';
+import logoMini from '/@/assets/logo.ico';
+import loginMain from '/@/assets/logo.png';
 import loginBg from '/@/assets/login-bg.svg';
 
 // 引入组件
@@ -104,14 +104,16 @@ onMounted(() => {
 		}
 		.login-left-img {
 			position: absolute;
+			display: flex;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
 			height: 52%;
+			justify-content: center;
+			align-items: center;
 			img {
-				width: 100%;
-				height: 100%;
+				width: 48%;
 				animation: error-num 0.6s ease;
 			}
 		}
