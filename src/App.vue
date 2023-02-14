@@ -1,5 +1,5 @@
 <template>
-	<el-config-provider>
+	<el-config-provider :locale="zhCn">
 		<router-view />
 		<CloseFull />
 	</el-config-provider>
@@ -14,6 +14,7 @@ import { useThemeConfig } from '/@/stores/themeConfig';
 import { Local, Session } from '/@/utils/storage';
 import setIntroduction from '/@/utils/setIconfont';
 import { useChangeColor } from '/@/utils/theme';
+import zhCn from "element-plus/lib/locale/lang/zh-cn"
 
 // 引入组件
 const CloseFull = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/closeFull.vue'));
