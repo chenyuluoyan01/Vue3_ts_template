@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts" name="app">
-import { defineAsyncComponent, computed, ref, onBeforeMount, onMounted, onUnmounted, nextTick } from 'vue';
+import { defineAsyncComponent, computed, ref, onBeforeMount, onMounted, nextTick } from 'vue';
 
 import { storeToRefs } from 'pinia';
 import { useTagsViewRoutes } from '/@/stores/tagsViewRoutes';
@@ -91,6 +91,9 @@ onMounted(() => {
 		if (Session.get('isTagsViewCurrenFull')) {
 			stores.setCurrenFullscreen(Session.get('isTagsViewCurrenFull'));
 		}
+		setTimeout(() => {
+			initLayoutChangeFun()
+		}, 100)
 	});
 });
 </script>

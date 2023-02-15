@@ -43,7 +43,6 @@ import { storeToRefs } from 'pinia';
 import { useThemeConfig } from '/@/stores/themeConfig';
 import { NextLoading } from '/@/utils/loading';
 import logoMini from '/@/assets/logo.ico';
-import loginMain from '/@/assets/logo.png';
 import loginBg from '/@/assets/login-bg.svg';
 
 // 引入组件
