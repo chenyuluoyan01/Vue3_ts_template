@@ -440,11 +440,12 @@ const initNumCountUp = () => {
 // 页面加载时
 onMounted(() => {
 	initEchartsResize();
-	// initNumCountUp();
+	initNumCountUp();
 });
 // 由于页面缓存原因，keep-alive
 onActivated(() => {
 	initEchartsResizeFun();
+	initNumCountUp();
 });
 // 监听 pinia 中的 tagsview 开启全屏变化，重新 resize 图表，防止不出现/大小不变等
 watch(
