@@ -193,7 +193,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 				path: '/fun',
 				name: 'funIndex',
 				component: () => import('/@/layout/routerView/parent.vue'),
-				redirect: '/fun/wangEditor',
+				redirect: '/fun/tagsView',
 				meta: {
 					title: '功能',
 					isLink: '',
@@ -269,6 +269,21 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 						},
 					},
 				],
+			},
+			{
+				path: '/chart',
+				name: 'chartIndex',
+				component: () => import('/@/views/chart/index.vue'),
+				meta: {
+					title: '大数据图表',
+					isLink: '',
+					isHide: false,
+					isKeepAlive: true,
+					isAffix: false,
+					isIframe: false,
+					roles: ['admin', 'common'],
+					icon: 'iconfont icon-ico_shuju',
+				},
 			},
 			{
 				path: '/personal',
