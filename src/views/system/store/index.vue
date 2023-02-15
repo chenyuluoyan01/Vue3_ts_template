@@ -14,13 +14,13 @@
 	</div>
 </template>
 
-<script setup lang="ts" name="makeTableDemo">
+<script setup lang="ts" name="store">
 import { defineAsyncComponent, reactive, ref, onMounted } from 'vue';
 import { ElMessage } from 'element-plus';
 
 // 引入组件
 const Table = defineAsyncComponent(() => import('/@/components/table/index.vue'));
-const TableSearch = defineAsyncComponent(() => import('/@/views/make/tableDemo/search.vue'));
+const TableSearch = defineAsyncComponent(() => import('/@/views/system/store/search.vue'));
 
 // 定义变量内容
 const tableRef = ref<RefType>();
